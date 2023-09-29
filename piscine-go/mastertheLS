@@ -1,0 +1,3 @@
+#! /bin/bash
+
+ls -tlpm | sed 's/, /,/g'
