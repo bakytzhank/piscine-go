@@ -1,0 +1,3 @@
+#! /bin/bash
+
+find . -name 'a*' -o -type f -a \( -name '*z' -o -name 'z*a!' \)
