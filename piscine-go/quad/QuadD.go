@@ -11,7 +11,6 @@ func QuadD(x, y int) {
 						z01.PrintRune('A')
 					} else if j == x {
 						z01.PrintRune('C')
-
 					} else {
 						z01.PrintRune('B')
 					}
