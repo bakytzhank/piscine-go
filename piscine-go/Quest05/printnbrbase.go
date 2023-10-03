@@ -4,17 +4,17 @@ import "github.com/01-edu/z01"
 
 func PrintNbrBase(nbr int, base string) {
 	n := len(base)
-	if n < 2 {
+	minusplus := false
+	offset := false
+	for _, char := range base {
+		if char == '+' || char == '-' {
+			minusplus = true
+		}
+	}
+	if n < 2 || minusplus {
 		z01.PrintRune('N')
 		z01.PrintRune('V')
 		return
-	}
-	for _, l := range base {
-		if l == '-' || l == '+' {
-			z01.PrintRune('N')
-			z01.PrintRune('V')
-			return
-		}
 	}
 	for i := 0; i < len(base); i++ {
 		for j := i + 1; j < len(base); j++ {
@@ -31,14 +31,23 @@ func PrintNbrBase(nbr int, base string) {
 	}
 	if nbr < 0 {
 		z01.PrintRune('-')
-		nbr = -nbr
+		if nbr == -9223372036854775808 {
+			nbr = 9223372036854775807
+			offset = true
+		} else {
+			nbr = -nbr
+		}
 	}
-	res := ""
+	var res []rune
 	for nbr > 0 {
-		res = res + string(base[nbr%n])
+		remainder := nbr % n
+		res = append(res, rune(base[remainder]))
 		nbr /= n
 	}
+	if offset {
+		res[0]++
+	}
 	for k := len(res) - 1; k >= 0; k-- {
-		z01.PrintRune(rune(res[k]))
+		z01.PrintRune(res[k])
 	}
 }
