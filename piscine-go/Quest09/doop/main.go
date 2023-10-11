@@ -42,39 +42,39 @@ func itoa(n int) string {
 	return sign + result
 }
 
-func safeAdd(a, b int) (int, bool) {
-	if (b > 0 && a > (1<<62)-b) || (b < 0 && a < -(1<<62)-b) {
-		return 0, true
-	}
-	return a + b, false
-}
+// func safeAdd(a, b int) (int, bool) {
+// 	if (b > 0 && a > (1<<62)-b) || (b < 0 && a < -(1<<62)-b) {
+// 		return 0, true
+// 	}
+// 	return a + b, false
+// }
 
-func safeSubtract(a, b int) (int, bool) {
-	if (b > 0 && a < -(1<<62)+b) || (b < 0 && a > (1<<62)+b) {
-		return 0, true
-	}
-	return a - b, false
-}
+// func safeSubtract(a, b int) (int, bool) {
+// 	if (b > 0 && a < -(1<<62)+b) || (b < 0 && a > (1<<62)+b) {
+// 		return 0, true
+// 	}
+// 	return a - b, false
+// }
 
-func safeMultiply(a, b int) (int, bool) {
-	if a > 0 {
-		if b > 0 && a > (1<<(63/2))/b {
-			return 0, true
-		}
-		if b < 0 && b < -(1<<(63/2))/a {
-			return 0, true
-		}
-	}
-	if a < 0 {
-		if b > 0 && a < -(1<<(63/2))/b {
-			return 0, true
-		}
-		if b < 0 && b < (1<<(63/2))/a {
-			return 0, true
-		}
-	}
-	return a * b, false
-}
+// func safeMultiply(a, b int) (int, bool) {
+// 	if a > 0 {
+// 		if b > 0 && a > (1<<(63/2))/b {
+// 			return 0, true
+// 		}
+// 		if b < 0 && b < -(1<<(63/2))/a {
+// 			return 0, true
+// 		}
+// 	}
+// 	if a < 0 {
+// 		if b > 0 && a < -(1<<(63/2))/b {
+// 			return 0, true
+// 		}
+// 		if b < 0 && b < (1<<(63/2))/a {
+// 			return 0, true
+// 		}
+// 	}
+// 	return a * b, false
+// }
 
 func main() {
 	args := os.Args[1:]
@@ -91,15 +91,33 @@ func main() {
 	}
 
 	var result int
-	overflow := false
+	// overflow := false
 
 	switch op {
 	case "+":
-		result, overflow = safeAdd(a, b)
+		// result, overflow = safeAdd(a, b)
+		check := a + b
+			if (check > a) == (b > 0) {
+				result = check
+			} else {
+				return
+			} 
 	case "-":
-		result, overflow = safeSubtract(a, b)
+		// result, overflow = safeSubtract(a, b)
+		check := a - b
+			if (check < a) == (b > 0) {
+				result = check
+			} else {
+				return
+			} 
 	case "*":
-		result, overflow = safeMultiply(a, b)
+		// result, overflow = safeMultiply(a, b)
+		check := a * b
+		if a == 0 || (result/a == b) {
+			result = check
+		} else {
+			return
+		}
 	case "/":
 		if b == 0 {
 			os.Stdout.WriteString("No division by 0\n")
@@ -116,9 +134,9 @@ func main() {
 		return
 	}
 
-	if overflow {
-		return
-	}
+	// if overflow {
+	// 	return
+	// }
 
 	resultStr := itoa(result)
 	os.Stdout.WriteString(resultStr + "\n")
