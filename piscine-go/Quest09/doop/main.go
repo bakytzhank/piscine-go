@@ -113,7 +113,7 @@ func main() {
 	case "*":
 		// result, overflow = safeMultiply(a, b)
 		check := a * b
-		if a == 0 || (result/a == b) {
+		if a == 0 || (check/a == b) {
 			result = check
 		} else {
 			return
