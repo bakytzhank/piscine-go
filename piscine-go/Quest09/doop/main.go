@@ -42,40 +42,6 @@ func itoa(n int) string {
 	return sign + result
 }
 
-// func safeAdd(a, b int) (int, bool) {
-// 	if (b > 0 && a > (1<<62)-b) || (b < 0 && a < -(1<<62)-b) {
-// 		return 0, true
-// 	}
-// 	return a + b, false
-// }
-
-// func safeSubtract(a, b int) (int, bool) {
-// 	if (b > 0 && a < -(1<<62)+b) || (b < 0 && a > (1<<62)+b) {
-// 		return 0, true
-// 	}
-// 	return a - b, false
-// }
-
-// func safeMultiply(a, b int) (int, bool) {
-// 	if a > 0 {
-// 		if b > 0 && a > (1<<(63/2))/b {
-// 			return 0, true
-// 		}
-// 		if b < 0 && b < -(1<<(63/2))/a {
-// 			return 0, true
-// 		}
-// 	}
-// 	if a < 0 {
-// 		if b > 0 && a < -(1<<(63/2))/b {
-// 			return 0, true
-// 		}
-// 		if b < 0 && b < (1<<(63/2))/a {
-// 			return 0, true
-// 		}
-// 	}
-// 	return a * b, false
-// }
-
 func main() {
 	args := os.Args[1:]
 	if len(args) != 3 {
@@ -91,11 +57,9 @@ func main() {
 	}
 
 	var result int
-	// overflow := false
 
 	switch op {
 	case "+":
-		// result, overflow = safeAdd(a, b)
 		check := a + b
 			if (check > a) == (b > 0) {
 				result = check
@@ -103,7 +67,6 @@ func main() {
 				return
 			} 
 	case "-":
-		// result, overflow = safeSubtract(a, b)
 		check := a - b
 			if (check < a) == (b > 0) {
 				result = check
@@ -111,7 +74,6 @@ func main() {
 				return
 			} 
 	case "*":
-		// result, overflow = safeMultiply(a, b)
 		check := a * b
 		if a == 0 || (check/a == b) {
 			result = check
@@ -133,10 +95,6 @@ func main() {
 	default:
 		return
 	}
-
-	// if overflow {
-	// 	return
-	// }
 
 	resultStr := itoa(result)
 	os.Stdout.WriteString(resultStr + "\n")
