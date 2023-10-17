@@ -8,14 +8,14 @@ func ListRemoveIf(l *List, data_ref interface{}) {
 		if current.Data == data_ref {
 			if previous != nil {
 				previous.Next = current.Next
-				if current.Next == nil {
-					l.Tail = previous
-				}
+				// if current.Next == nil {
+				// 	l.Tail = previous
+				// }
 			} else {
 				l.Head = current.Next
-				if current.Next == nil {
-					l.Tail = nil
-				}
+				// if current.Next == nil {
+				// 	l.Tail = nil
+				// }
 			}
 		} else {
 			previous = current
