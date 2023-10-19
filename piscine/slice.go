@@ -14,7 +14,7 @@ func Slice(a []string, nbrs... int) []string{
 	if start < 0 {
 		start = len(a) + start
 	}
-	if end <= 0 {
+	if end < 0 {
 		end = len(a) + end
 	}
 
