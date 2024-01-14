@@ -1,0 +1,2187 @@
+{
+    "id": 100515,
+    "name": "Exam-machine",
+    "type": "exam",
+    "attrs": {
+        "campus": "academie",
+        "eventDuration": 240,
+        "expectedXp": 0,
+        "maxGroup": 10,
+        "registrationDuration": 2160,
+        "difficulty": 110,
+        "duration": 1,
+        "level": 17,
+        "parentType": "module",
+        "rootPath": "/academie/div-01",
+        "startAfter": 0,
+        "xpIndex": 1,
+        "eventStartDelay": 60
+    },
+    "children": {
+        "displayfirstparam": {
+            "id": 100566,
+            "name": "displayfirstparam",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/displayfirstparam/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 2,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "displayfirstparam/main.go"
+                ],
+                "allowedFunctions": [
+                    "github.com/01-edu/z01.PrintRune",
+                    "os.*",
+                    "--allow-builtin"
+                ],
+                "group": 1
+            },
+            "key": "displayfirstparam",
+            "path": "/academie/div-01/checkpoint/displayfirstparam",
+            "index": 0
+        },
+        "displaylastparam": {
+            "id": 100565,
+            "name": "displaylastparam",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/displaylastparam/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 2,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "displaylastparam/main.go"
+                ],
+                "allowedFunctions": [
+                    "github.com/01-edu/z01.PrintRune",
+                    "os.*",
+                    "--allow-builtin"
+                ],
+                "group": 1
+            },
+            "key": "displaylastparam",
+            "path": "/academie/div-01/checkpoint/displaylastparam",
+            "index": 1
+        },
+        "hello": {
+            "id": 100564,
+            "name": "hello",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/hello/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 2,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "hello/main.go"
+                ],
+                "allowedFunctions": [
+                    "github.com/01-edu/z01.PrintRune",
+                    "--allow-builtin"
+                ],
+                "group": 1
+            },
+            "key": "hello",
+            "path": "/academie/div-01/checkpoint/hello",
+            "index": 2
+        },
+        "paramcount": {
+            "id": 100560,
+            "name": "paramcount",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/paramcount/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 2,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "paramcount/main.go"
+                ],
+                "allowedFunctions": [
+                    "os.Args",
+                    "github.com/01-edu/z01.PrintRune",
+                    "--allow-builtin"
+                ],
+                "group": 1
+            },
+            "key": "paramcount",
+            "path": "/academie/div-01/checkpoint/paramcount",
+            "index": 3
+        },
+        "displayalrevm": {
+            "id": 100549,
+            "name": "displayalrevm",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/displayalrevm/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 2,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "displayalrevm/main.go"
+                ],
+                "allowedFunctions": [
+                    "github.com/01-edu/z01.PrintRune",
+                    "--allow-builtin"
+                ],
+                "group": 1
+            },
+            "key": "displayalrevm",
+            "path": "/academie/div-01/checkpoint/displayalrevm",
+            "index": 4
+        },
+        "displayalpham": {
+            "id": 100550,
+            "name": "displayalpham",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/displayalpham/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 2,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "displayalpham/main.go"
+                ],
+                "allowedFunctions": [
+                    "github.com/01-edu/z01.PrintRune",
+                    "--allow-builtin"
+                ],
+                "group": 1
+            },
+            "key": "displayalpham",
+            "path": "/academie/div-01/checkpoint/displayalpham",
+            "index": 5
+        },
+        "printdigits": {
+            "id": 100563,
+            "name": "printdigits",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/printdigits/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 2,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "printdigits/main.go"
+                ],
+                "allowedFunctions": [
+                    "github.com/01-edu/z01.PrintRune",
+                    "--allow-builtin"
+                ],
+                "group": 1
+            },
+            "key": "printdigits",
+            "path": "/academie/div-01/checkpoint/printdigits",
+            "index": 6
+        },
+        "countdown": {
+            "id": 100524,
+            "name": "countdown",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/countdown/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 4,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "countdown/main.go"
+                ],
+                "allowedFunctions": [
+                    "github.com/01-edu/z01.PrintRune",
+                    "--allow-builtin"
+                ],
+                "group": 2
+            },
+            "key": "countdown",
+            "path": "/academie/div-01/checkpoint/countdown",
+            "index": 7
+        },
+        "strlen": {
+            "id": 100562,
+            "name": "strlen",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/strlen/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 4,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "strlen.go"
+                ],
+                "allowedFunctions": [
+                    "--allow-builtin"
+                ],
+                "group": 2
+            },
+            "key": "strlen",
+            "path": "/academie/div-01/checkpoint/strlen",
+            "index": 8
+        },
+        "max": {
+            "id": 100523,
+            "name": "max",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/max/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 4,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "max.go"
+                ],
+                "allowedFunctions": [
+                    "--allow-builtin"
+                ],
+                "group": 2
+            },
+            "key": "max",
+            "path": "/academie/div-01/checkpoint/max",
+            "index": 9
+        },
+        "wdmatch": {
+            "id": 100546,
+            "name": "wdmatch",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/wdmatch/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 4,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "wdmatch/main.go"
+                ],
+                "allowedFunctions": [
+                    "os.Args",
+                    "github.com/01-edu/z01.PrintRune",
+                    "--allow-builtin"
+                ],
+                "group": 2
+            },
+            "key": "wdmatch",
+            "path": "/academie/div-01/checkpoint/wdmatch",
+            "index": 10
+        },
+        "firstrune": {
+            "id": 100561,
+            "name": "firstrune",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/firstrune/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 6,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "firstrune.go"
+                ],
+                "allowedFunctions": [
+                    "--allow-builtin"
+                ],
+                "group": 3
+            },
+            "key": "firstrune",
+            "path": "/academie/div-01/checkpoint/firstrune",
+            "index": 11
+        },
+        "lastrune": {
+            "id": 100542,
+            "name": "lastrune",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/lastrune/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 6,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "lastrune.go"
+                ],
+                "allowedFunctions": [
+                    "--allow-builtin"
+                ],
+                "group": 3
+            },
+            "key": "lastrune",
+            "path": "/academie/div-01/checkpoint/lastrune",
+            "index": 12
+        },
+        "rot13": {
+            "id": 100559,
+            "name": "rot13",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/rot13/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 6,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "rot13/main.go"
+                ],
+                "allowedFunctions": [
+                    "github.com/01-edu/z01.PrintRune",
+                    "os.*",
+                    "--allow-builtin"
+                ],
+                "group": 3
+            },
+            "key": "rot13",
+            "path": "/academie/div-01/checkpoint/rot13",
+            "index": 13
+        },
+        "lastword": {
+            "id": 100530,
+            "name": "lastword",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/lastword/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 6,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "lastword/main.go"
+                ],
+                "allowedFunctions": [
+                    "github.com/01-edu/z01.PrintRune",
+                    "os.Args",
+                    "--allow-builtin"
+                ],
+                "group": 3
+            },
+            "key": "lastword",
+            "path": "/academie/div-01/checkpoint/lastword",
+            "index": 14
+        },
+        "reduceint": {
+            "id": 100521,
+            "name": "reduceint",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/reduceint/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 6,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "reduceint.go"
+                ],
+                "allowedFunctions": [
+                    "github.com/01-edu/z01.PrintRune",
+                    "strconv.Itoa",
+                    "--allow-builtin"
+                ],
+                "group": 3
+            },
+            "key": "reduceint",
+            "path": "/academie/div-01/checkpoint/reduceint",
+            "index": 15
+        },
+        "chunk": {
+            "id": 100522,
+            "name": "chunk",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/chunk/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 8,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "chunk.go"
+                ],
+                "allowedFunctions": [
+                    "fmt.Println",
+                    "--allow-builtin"
+                ],
+                "group": 4
+            },
+            "key": "chunk",
+            "path": "/academie/div-01/checkpoint/chunk",
+            "index": 16
+        },
+        "searchreplace": {
+            "id": 100556,
+            "name": "searchreplace",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/searchreplace/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 8,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "searchreplace/main.go"
+                ],
+                "allowedFunctions": [
+                    "github.com/01-edu/z01.PrintRune",
+                    "os.Args",
+                    "--allow-builtin"
+                ],
+                "group": 4
+            },
+            "key": "searchreplace",
+            "path": "/academie/div-01/checkpoint/searchreplace",
+            "index": 17
+        },
+        "tabmult": {
+            "id": 100558,
+            "name": "tabmult",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/tabmult/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 8,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "tabmult/main.go"
+                ],
+                "allowedFunctions": [
+                    "github.com/01-edu/z01.PrintRune",
+                    "os.*",
+                    "strconv.Atoi",
+                    "--allow-builtin"
+                ],
+                "group": 4
+            },
+            "key": "tabmult",
+            "path": "/academie/div-01/checkpoint/tabmult",
+            "index": 18
+        },
+        "alphamirror": {
+            "id": 100527,
+            "name": "alphamirror",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/alphamirror/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 8,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "alphamirror/main.go"
+                ],
+                "allowedFunctions": [
+                    "github.com/01-edu/z01.PrintRune",
+                    "os.Args",
+                    "--allow-builtin"
+                ],
+                "group": 4
+            },
+            "key": "alphamirror",
+            "path": "/academie/div-01/checkpoint/alphamirror",
+            "index": 19
+        },
+        "compare": {
+            "id": 100536,
+            "name": "compare",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/compare/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 8,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "compare.go"
+                ],
+                "allowedFunctions": [
+                    "--allow-builtin"
+                ],
+                "group": 4
+            },
+            "key": "compare",
+            "path": "/academie/div-01/checkpoint/compare",
+            "index": 20
+        },
+        "doop": {
+            "id": 100526,
+            "name": "doop",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/doop/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 8,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "doop/main.go"
+                ],
+                "allowedFunctions": [
+                    "..",
+                    "os.*",
+                    "--allow-builtin"
+                ],
+                "group": 4
+            },
+            "key": "doop",
+            "path": "/academie/div-01/checkpoint/doop",
+            "index": 21
+        },
+        "findprevprime": {
+            "id": 100520,
+            "name": "findprevprime",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/findprevprime/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 8,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "findprevprime.go"
+                ],
+                "allowedFunctions": [
+                    "--allow-builtin"
+                ],
+                "group": 4
+            },
+            "key": "findprevprime",
+            "path": "/academie/div-01/checkpoint/findprevprime",
+            "index": 22
+        },
+        "foldint": {
+            "id": 100517,
+            "name": "foldint",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/foldint/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 8,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "foldint.go"
+                ],
+                "allowedFunctions": [
+                    "github.com/01-edu/z01.PrintRune",
+                    "--allow-builtin"
+                ],
+                "group": 4
+            },
+            "key": "foldint",
+            "path": "/academie/div-01/checkpoint/foldint",
+            "index": 23
+        },
+        "romannumbers": {
+            "id": 100519,
+            "name": "romannumbers",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/romannumbers/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 10,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "romannumbers/main.go"
+                ],
+                "allowedFunctions": [
+                    "os.Args",
+                    "fmt.Printf",
+                    "--allow-builtin"
+                ],
+                "group": 5
+            },
+            "key": "romannumbers",
+            "path": "/academie/div-01/checkpoint/romannumbers",
+            "index": 24
+        },
+        "ispowerof2": {
+            "id": 100545,
+            "name": "ispowerof2",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/ispowerof2/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 10,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "ispowerof2/main.go"
+                ],
+                "allowedFunctions": [
+                    "github.com/01-edu/z01.PrintRune",
+                    "strconv.Atoi",
+                    "os.Args",
+                    "--allow-builtin"
+                ],
+                "group": 5
+            },
+            "key": "ispowerof2",
+            "path": "/academie/div-01/checkpoint/ispowerof2",
+            "index": 25
+        },
+        "union": {
+            "id": 100528,
+            "name": "union",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/union/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 10,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "union/main.go"
+                ],
+                "allowedFunctions": [
+                    "os.Args",
+                    "github.com/01-edu/z01.PrintRune",
+                    "--allow-builtin"
+                ],
+                "group": 5
+            },
+            "key": "union",
+            "path": "/academie/div-01/checkpoint/union",
+            "index": 26
+        },
+        "inter": {
+            "id": 100529,
+            "name": "inter",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/inter/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 10,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "inter/main.go"
+                ],
+                "allowedFunctions": [
+                    "github.com/01-edu/z01.PrintRune",
+                    "os.Args",
+                    "--allow-builtin"
+                ],
+                "group": 5
+            },
+            "key": "inter",
+            "path": "/academie/div-01/checkpoint/inter",
+            "index": 27
+        },
+        "printbits": {
+            "id": 100544,
+            "name": "printbits",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/printbits/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 10,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "printbits/main.go"
+                ],
+                "allowedFunctions": [
+                    "strconv.Atoi",
+                    "os.Args",
+                    "github.com/01-edu/z01.PrintRune",
+                    "--allow-builtin"
+                ],
+                "group": 5
+            },
+            "key": "printbits",
+            "path": "/academie/div-01/checkpoint/printbits",
+            "index": 28
+        },
+        "swapbits": {
+            "id": 100543,
+            "name": "swapbits",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/swapbits/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 10,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "swapbits.go"
+                ],
+                "allowedFunctions": [
+                    "--allow-builtin"
+                ],
+                "group": 5
+            },
+            "key": "swapbits",
+            "path": "/academie/div-01/checkpoint/swapbits",
+            "index": 29
+        },
+        "reversebits": {
+            "id": 100518,
+            "name": "reversebits",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/reversebits/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 10,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "reversebits.go"
+                ],
+                "allowedFunctions": [
+                    "os.Args",
+                    "fmt.*",
+                    "--allow-builtin"
+                ],
+                "group": 5
+            },
+            "key": "reversebits",
+            "path": "/academie/div-01/checkpoint/reversebits",
+            "index": 30
+        },
+        "piglatin": {
+            "id": 100525,
+            "name": "piglatin",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/piglatin/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 10,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "piglatin/main.go"
+                ],
+                "allowedFunctions": [
+                    "os.Args",
+                    "github.com/01-edu/z01.PrintRune",
+                    "--allow-builtin"
+                ],
+                "group": 5
+            },
+            "key": "piglatin",
+            "path": "/academie/div-01/checkpoint/piglatin",
+            "index": 31
+        },
+        "repeatalpha": {
+            "id": 100567,
+            "name": "repeatalpha",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/repeatalpha/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 12,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "repeatalpha/main.go"
+                ],
+                "allowedFunctions": [
+                    "github.com/01-edu/z01.PrintRune",
+                    "os.*",
+                    "--allow-builtin"
+                ],
+                "group": 6
+            },
+            "key": "repeatalpha",
+            "path": "/academie/div-01/checkpoint/repeatalpha",
+            "index": 32
+        },
+        "sortwordarr": {
+            "id": 100534,
+            "name": "sortwordarr",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/sortwordarr/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 12,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "sortwordarr.go"
+                ],
+                "allowedFunctions": [
+                    "--allow-builtin"
+                ],
+                "group": 6
+            },
+            "key": "sortwordarr",
+            "path": "/academie/div-01/checkpoint/sortwordarr",
+            "index": 33
+        },
+        "printhex": {
+            "id": 100547,
+            "name": "printhex",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/printhex/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 12,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "printhex/main.go"
+                ],
+                "allowedFunctions": [
+                    "github.com/01-edu/z01.PrintRune",
+                    "os.*",
+                    "strconv.*",
+                    "--allow-builtin"
+                ],
+                "group": 6
+            },
+            "key": "printhex",
+            "path": "/academie/div-01/checkpoint/printhex",
+            "index": 34
+        },
+        "gcd": {
+            "id": 100532,
+            "name": "gcd",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/gcd/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 12,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "gcd/main.go"
+                ],
+                "allowedFunctions": [
+                    "fmt.*",
+                    "os.Args",
+                    "strconv.Atoi",
+                    "--allow-builtin"
+                ],
+                "group": 6
+            },
+            "key": "gcd",
+            "path": "/academie/div-01/checkpoint/gcd",
+            "index": 35
+        },
+        "hiddenp": {
+            "id": 100557,
+            "name": "hiddenp",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/hiddenp/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 14,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "hiddenp/main.go"
+                ],
+                "allowedFunctions": [
+                    "os.Args",
+                    "github.com/01-edu/z01.PrintRune",
+                    "--allow-builtin"
+                ],
+                "group": 7
+            },
+            "key": "hiddenp",
+            "path": "/academie/div-01/checkpoint/hiddenp",
+            "index": 36
+        },
+        "rostring": {
+            "id": 100555,
+            "name": "rostring",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/rostring/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 14,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "rostring/main.go"
+                ],
+                "allowedFunctions": [
+                    "os.Args",
+                    "github.com/01-edu/z01.PrintRune",
+                    "--allow-builtin"
+                ],
+                "group": 7
+            },
+            "key": "rostring",
+            "path": "/academie/div-01/checkpoint/rostring",
+            "index": 37
+        },
+        "split": {
+            "id": 100541,
+            "name": "split",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/split/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 14,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "split.go"
+                ],
+                "allowedFunctions": [
+                    "make",
+                    "--allow-builtin"
+                ],
+                "group": 7
+            },
+            "key": "split",
+            "path": "/academie/div-01/checkpoint/split",
+            "index": 38
+        },
+        "revwstr": {
+            "id": 100554,
+            "name": "revwstr",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/revwstr/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 14,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "revwstr/main.go"
+                ],
+                "allowedFunctions": [
+                    "os.Args",
+                    "github.com/01-edu/z01.PrintRune",
+                    "--allow-builtin"
+                ],
+                "group": 7
+            },
+            "key": "revwstr",
+            "path": "/academie/div-01/checkpoint/revwstr",
+            "index": 39
+        },
+        "fprime": {
+            "id": 100533,
+            "name": "fprime",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/fprime/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 14,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "fprime/main.go"
+                ],
+                "allowedFunctions": [
+                    "strconv.Atoi",
+                    "os.Args",
+                    "fmt.*",
+                    "--allow-builtin"
+                ],
+                "group": 7
+            },
+            "key": "fprime",
+            "path": "/academie/div-01/checkpoint/fprime",
+            "index": 40
+        },
+        "addprimesum": {
+            "id": 100548,
+            "name": "addprimesum",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/addprimesum/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 14,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "addprimesum/main.go"
+                ],
+                "allowedFunctions": [
+                    "github.com/01-edu/z01.PrintRune",
+                    "os.*",
+                    "--allow-builtin"
+                ],
+                "group": 7
+            },
+            "key": "addprimesum",
+            "path": "/academie/div-01/checkpoint/addprimesum",
+            "index": 41
+        },
+        "atoibase": {
+            "id": 100535,
+            "name": "atoibase",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/atoibase/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 16,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "atoibase.go"
+                ],
+                "allowedFunctions": [
+                    "github.com/01-edu/z01.PrintRune",
+                    "--allow-builtin"
+                ],
+                "group": 8
+            },
+            "key": "atoibase",
+            "path": "/academie/div-01/checkpoint/atoibase",
+            "index": 42
+        },
+        "itoa": {
+            "id": 100538,
+            "name": "itoa",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/itoa/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 16,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "itoa.go"
+                ],
+                "allowedFunctions": [
+                    "len",
+                    "--allow-builtin"
+                ],
+                "group": 8
+            },
+            "key": "itoa",
+            "path": "/academie/div-01/checkpoint/itoa",
+            "index": 43
+        },
+        "printmemory": {
+            "id": 100516,
+            "name": "printmemory",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/printmemory/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 18,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "printmemory.go"
+                ],
+                "allowedFunctions": [
+                    "github.com/01-edu/z01.PrintRune",
+                    "unicode.IsGraphic",
+                    "--allow-builtin"
+                ],
+                "group": 9
+            },
+            "key": "printmemory",
+            "path": "/academie/div-01/checkpoint/printmemory",
+            "index": 44
+        },
+        "rpncalc": {
+            "id": 100553,
+            "name": "rpncalc",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/rpncalc/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 18,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "rpncalc/main.go"
+                ],
+                "allowedFunctions": [
+                    "strconv.Atoi",
+                    "os.*",
+                    "fmt.*",
+                    "strings.Split",
+                    "--allow-builtin"
+                ],
+                "group": 9
+            },
+            "key": "rpncalc",
+            "path": "/academie/div-01/checkpoint/rpncalc",
+            "index": 45
+        },
+        "brackets": {
+            "id": 100552,
+            "name": "brackets",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/brackets/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 18,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "brackets/main.go"
+                ],
+                "allowedFunctions": [
+                    "strconv.Atoi",
+                    "os.*",
+                    "fmt.*",
+                    "strings.Split",
+                    "--allow-builtin"
+                ],
+                "group": 9
+            },
+            "key": "brackets",
+            "path": "/academie/div-01/checkpoint/brackets",
+            "index": 46
+        },
+        "listsize": {
+            "id": 100540,
+            "name": "listsize",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/listsize/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 18,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "listsize.go"
+                ],
+                "allowedFunctions": [
+                    "--allow-builtin"
+                ],
+                "group": 9
+            },
+            "key": "listsize",
+            "path": "/academie/div-01/checkpoint/listsize",
+            "index": 47
+        },
+        "options": {
+            "id": 100531,
+            "name": "options",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/options/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 18,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "options/main.go"
+                ],
+                "allowedFunctions": [
+                    "os.*",
+                    "fmt.*",
+                    "--allow-builtin"
+                ],
+                "group": 9
+            },
+            "key": "options",
+            "path": "/academie/div-01/checkpoint/options",
+            "index": 48
+        },
+        "listremoveif": {
+            "id": 100539,
+            "name": "listremoveif",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/listremoveif/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 20,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "listremoveif.go"
+                ],
+                "allowedFunctions": [
+                    "--allow-builtin"
+                ],
+                "group": 10
+            },
+            "key": "listremoveif",
+            "path": "/academie/div-01/checkpoint/listremoveif",
+            "index": 49
+        },
+        "itoabase": {
+            "id": 100537,
+            "name": "itoabase",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/itoabase/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 20,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "itoabase.go"
+                ],
+                "allowedFunctions": [
+                    "--allow-builtin"
+                ],
+                "group": 10
+            },
+            "key": "itoabase",
+            "path": "/academie/div-01/checkpoint/itoabase",
+            "index": 50
+        },
+        "brainfuck": {
+            "id": 100551,
+            "name": "brainfuck",
+            "type": "exercise",
+            "attrs": {
+                "campus": "academie",
+                "subject": "/markdown/root/public/subjects/brainfuck/README.md",
+                "validations": [
+                    {
+                        "type": "tester",
+                        "testImage": "ghcr.io/01-edu/test-go",
+                        "cooldown": 180000
+                    }
+                ],
+                "baseXp": 0,
+                "category": "required",
+                "codeEditor": {
+                    "enabled": true
+                },
+                "delay": 0,
+                "difficulty": 20,
+                "duration": 0,
+                "level": 17,
+                "parentType": "exam",
+                "rootName": "div-01",
+                "rootPath": "/academie/div-01",
+                "xpIndex": 1,
+                "language": "go",
+                "expectedFiles": [
+                    "brainfuck/main.go"
+                ],
+                "allowedFunctions": [
+                    "os.*",
+                    "github.com/01-edu/z01.PrintRune",
+                    "--allow-builtin"
+                ],
+                "group": 10
+            },
+            "key": "brainfuck",
+            "path": "/academie/div-01/checkpoint/brainfuck",
+            "index": 51
+        }
+    },
+    "key": "checkpoint",
+    "path": "/academie/div-01/checkpoint",
+    "index": 1
+}
