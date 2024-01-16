@@ -13,5 +13,7 @@ It was the best of times, it was the worst of TIMES, it was the age of wisdom, I
 Simply add 66 and 2 and you will see the result is 68.
 There is no greater agony than bearing an untold story inside you.
 Punctuation tests are... kinda boring, don't you think!?
-One Two 2
+One Two 3
 One Two three
+One TWO THREE
+four
