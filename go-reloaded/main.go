@@ -9,7 +9,30 @@ import (
 	
 )
 
+func customSplit(s string) []string {
+	var fields []string
+	var currentField string
 
+	for _, char := range s {
+		if char == ' ' || char == '\t' {
+			// Found a whitespace character, add the current field to the slice
+			if currentField != "" {
+				fields = append(fields, currentField)
+				currentField = ""
+			}
+		} else {
+			// Non-whitespace character, add it to the current field
+			currentField += string(char)
+		}
+	}
+
+	// Add the last field (if any)
+	if currentField != "" {
+		fields = append(fields, currentField)
+	}
+
+	return fields
+}
 
 func main() {
 	_, err := os.Open(os.Args[0])
@@ -23,7 +46,7 @@ func main() {
 		data, _ := os.ReadFile(os.Args[1])
 		// fmt.Print(string(data))
 		txt := string(data)
-		txtslice := strings.Split(txt, " ")
+		txtslice := customSplit(txt)//strings.Split(txt, " ")
 		printout := ""
 		quotechecker := 0
 		
@@ -121,14 +144,14 @@ func main() {
 				txtslice[index] = ""
 				quotechecker = 0
 			}
-			if txtslice[index] == "." {
-				txtslice[index-1] = txtslice[index-1] + txtslice[index]
-				txtslice[index] = ""
-			}
+			// if txtslice[index] == "." {
+			// 	txtslice[index-1] = txtslice[index-1] + txtslice[index]
+			// 	txtslice[index] = ""
+			// }
 
 			// ========= PUNCTUATION =========
 			s := strings.Join(txtslice, " ")
-			s2 := strings.Join(strings.Fields(string(s)), " ")
+			s2 := strings.Join(customSplit(s), " ")//strings.Fields(string(s)), " ")
 
 			x := []byte(s2)
 			for i := 1; i <= len(x); i++ {
@@ -147,7 +170,7 @@ func main() {
 				}
 				
 			}
-			printout = strings.Join(strings.Fields(string(x)), " ") 
+			printout = strings.Join(customSplit(string(x)), " ") //strings.Fields(string(x)), " ") 
 			err = os.WriteFile(os.Args[2], []byte(printout), 0666) // ioutil.WriteFile(os.Args[2], []byte(printout), 0666)
 			if err != nil {
 				fmt.Println(err)

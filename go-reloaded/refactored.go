@@ -40,6 +40,7 @@ func processFile(inputFileName, outputFileName string) error {
 	txt := string(data)
 	txtslice := strings.Fields(txt)
 	printout := ""
+	quotechecker := 0
 
 	for index, value := range txtslice {
 		processTriggers(index, value, txtslice)
@@ -116,12 +117,17 @@ func processPunctuation(index int, txtslice []string) {
 	}
 }
 
-func processQuote(index int, txtslice []string) {
-	if index < len(txtslice)-1 && txtslice[index+1] != "" {
+func processQuote(index int, txtslice []string, quotechecker int) {
+	if txtslice[index] == "'" && index < len(txtslice)-1 && quotechecker == 0 {
 		txtslice[index+1] = "'" + txtslice[index+1]
 		txtslice[index] = ""
-	} else if index > 0 && txtslice[index-1] != "" {
-		txtslice[index-1] = txtslice[index-1] + "'"
+		quotechecker = 1
+		
+	}
+	if txtslice[index] == "'" && quotechecker == 1   {
+	
+		txtslice[index-1] = txtslice[index-1] +  "'"
 		txtslice[index] = ""
+		quotechecker = 0
 	}
 }
