@@ -3,180 +3,63 @@ package main
 import (
 	"fmt"
 	"os"
-	"regexp"
-	"strconv"
-	"strings"
-	
+	"go-reloaded/processors"
+	"go-reloaded/strprocess"
 )
 
-func customSplit(s string) []string {
-	var fields []string
-	var currentField string
-
-	for _, char := range s {
-		if char == ' ' || char == '\t' {
-			// Found a whitespace character, add the current field to the slice
-			if currentField != "" {
-				fields = append(fields, currentField)
-				currentField = ""
-			}
-		} else {
-			// Non-whitespace character, add it to the current field
-			currentField += string(char)
-		}
-	}
-
-	// Add the last field (if any)
-	if currentField != "" {
-		fields = append(fields, currentField)
-	}
-
-	return fields
-}
+const filePermission = 0666 // File Permission set to Read & Write
 
 func main() {
-	_, err := os.Open(os.Args[0])
-	if err != nil {
-		fmt.Println(err)
-	} else if len(os.Args) >= 4 {
-		fmt.Println("Too many arguments")
-	} else if len(os.Args) < 2 {
+	// Check if the correct number of command-line arguments is provided
+	if len(os.Args) < 3 {
 		fmt.Println("File name missing")
-	} else { // no errors and a right amount of arguments and we open the file
-		data, _ := os.ReadFile(os.Args[1])
-		// fmt.Print(string(data))
-		txt := string(data)
-		txtslice := customSplit(txt)//strings.Split(txt, " ")
-		printout := ""
-		quotechecker := 0
-		
-
-		for index, value := range txtslice { //start ranging over slice to check elements
-			// ========= UP =========
-			if value == "(up)" { //if an element value equals to a trigger
-				txtslice[index-1] = strings.ToUpper(string(txtslice[index-1])) //we change the value at preceding index using a builtin function
-				txtslice[index] = ""
-			} else if value == "(up," {
-				re := regexp.MustCompile("[0-9]+")
-				factor := re.FindAllString(string(txtslice[index+1]), -1)
-				stringfactor := strings.Join(factor, "")   //convert slice of a string into string
-				intfactor, _ := strconv.Atoi(stringfactor) //convert string into int that we can work with
-				for i := 1; i <= intfactor; i++ {
-					txtslice[index-i] = strings.ToUpper(txtslice[index-i])
-				}
-				txtslice[index+1] = ""
-				txtslice[index] = ""
-			}
-			// ========= LOW =========
-			if value == "(low)" { //if an element value equals to a trigger
-				txtslice[index-1] = strings.ToLower(string(txtslice[index-1])) //we change the value at preceding index using a builtin function
-				txtslice[index] = ""
-			} else if value == "(low," {
-				re := regexp.MustCompile("[0-9]+")
-				factor := re.FindAllString(string(txtslice[index+1]), -1)
-				stringfactor := strings.Join(factor, "")   //convert slice of a string into string
-				intfactor, _ := strconv.Atoi(stringfactor) //convert string into int that we can work with
-				for i := 1; i <= intfactor; i++ {
-					txtslice[index-i] = strings.ToLower(txtslice[index-i])
-				}
-				txtslice[index+1] = ""
-				txtslice[index] = ""
-			}
-			// ========= CAP =========
-			if value == "(cap)" { //if an element value equals to a trigger
-				txtslice[index-1] = strings.Title(strings.ToLower(string(txtslice[index-1]))) //we change the value at preceding index using a builtin function
-				txtslice[index] = ""
-			} else if value == "(cap," {
-				re := regexp.MustCompile("[0-9]+")
-				factor := re.FindAllString(string(txtslice[index+1]), -1)
-				stringfactor := strings.Join(factor, "")   //convert slice of a string into string
-				intfactor, _ := strconv.Atoi(stringfactor) //convert string into int that we can work with
-				for i := 1; i <= intfactor; i++ {
-					txtslice[index-i] = strings.Title(strings.ToLower(txtslice[index-i]))
-				}
-				txtslice[index+1] = ""
-				txtslice[index] = ""
-			}
-			// ========= HEX =========
-			if value == "(hex)" { //if an element value equals to a trigger
-				decimal, _ := strconv.ParseInt(txtslice[index-1], 16, 32)
-				decimalstring := strconv.FormatInt(decimal, 10)
-				txtslice[index-1] = decimalstring //we change the value at preceding index using a builtin function
-				txtslice[index] = ""
-			}
-			// ========= BIN =========
-			if value == "(bin)" { //if an element value equals to a trigger
-				decimal, _ := strconv.ParseInt(txtslice[index-1], 2, 32)
-				decimalstring := strconv.FormatInt(decimal, 10)
-				txtslice[index-1] = decimalstring //we change the value at preceding index using a builtin function
-				txtslice[index] = ""
-			}
-
-			// ========= A AN =========
-			if value == "A" || value == "a" && index < len(txtslice) {
-				isnextvowel, err := regexp.MatchString(`\A[aeiou]|\A[AEIOU]|\Ah`, txtslice[index+1])
-				if err != nil {
-					fmt.Println(err)
-				}
-				if isnextvowel {
-				
-					if txtslice[index] == "a" {
-						txtslice[index] = "an"
-					} 
-					if txtslice[index] == "A" {
-						txtslice[index] = "An"
-					}
-
-				}
-			}
-
-			// ========= 'PUNCTUATION' =========
-			
-			if txtslice[index] == "'" && index < len(txtslice)-1 && quotechecker == 0 {
-				txtslice[index+1] = "'" + txtslice[index+1]
-				txtslice[index] = ""
-				quotechecker = 1
-				
-			}
-			if txtslice[index] == "'" && quotechecker == 1   {
-			
-				txtslice[index-1] = txtslice[index-1] +  "'"
-				txtslice[index] = ""
-				quotechecker = 0
-			}
-			// if txtslice[index] == "." {
-			// 	txtslice[index-1] = txtslice[index-1] + txtslice[index]
-			// 	txtslice[index] = ""
-			// }
-
-			// ========= PUNCTUATION =========
-			s := strings.Join(txtslice, " ")
-			s2 := strings.Join(customSplit(s), " ")//strings.Fields(string(s)), " ")
-
-			x := []byte(s2)
-			for i := 1; i <= len(x); i++ {
-				for i, c := range []byte(x) {
-					if c == '.' || c == ',' || c == '!' || c == '?' || c == ';' || c == ':' {
-						if x[i-1] == ' ' { //if a punctuaction character has a whitespace before it
-							x[i-1] = x[i] //we swap their places
-							x[i] = ' '
-						}
-					}
-					if c == '\'' && i == len(x)-1 && x[i-1] == ' '  {
-						
-						x[i-1] = x[i]
-						x[i] = ' '
-					}
-				}
-				
-			}
-			printout = strings.Join(customSplit(string(x)), " ") //strings.Fields(string(x)), " ") 
-			err = os.WriteFile(os.Args[2], []byte(printout), 0666) // ioutil.WriteFile(os.Args[2], []byte(printout), 0666)
-			if err != nil {
-				fmt.Println(err)
-
-		}
-		}	
+		return
+	} else if len(os.Args) > 3 {
+		fmt.Println("Too many arguments")
+		return
 	}
 
-} 
+	// Process the input file and write the result to the output file
+	err := processFile(os.Args[1], os.Args[2])
+	if err != nil {
+		fmt.Println(err)
+	}
+}
+
+// processFile function reads from the input file, processes the content, and writes the result to the output file
+func processFile(inputFileName, outputFileName string) error {
+	// Open the input file
+	file, err := os.Open(inputFileName)
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+
+	// Read the content of the input file
+	data, err := os.ReadFile(inputFileName)
+	if err != nil {
+		return err
+	}
+
+	// Split the text into an array of words
+	splitTxt := strprocess.CustomSplit(string(data))
+
+	// Process various triggers in the text
+	resultTxt := ""
+	quoteFlag := 0
+	for index, val := range splitTxt {
+		processors.ProcessTriggers(index, val, splitTxt)
+		quoteFlag = processors.ProcessQuote(index, splitTxt, quoteFlag)
+	}
+
+	// Handle punctuation and join the processed text
+	resultTxt = strprocess.CustomJoin(strprocess.CustomSplit(string(processors.ProcessPunctuation(splitTxt))))
+
+	// Write the result to the output file
+	err = os.WriteFile(outputFileName, []byte(resultTxt), filePermission)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
