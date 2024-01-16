@@ -38,7 +38,7 @@ func processFile(inputFileName, outputFileName string) error {
 	}
 
 	txt := string(data)
-	txtslice := strings.Fields(txt)
+	txtslice := strings.customSplit(txt)
 	printout := ""
 	quotechecker := 0
 
@@ -49,7 +49,7 @@ func processFile(inputFileName, outputFileName string) error {
 	}
 
 	printout = strings.Join(txtslice, " ")
-	printout = strings.Join(strings.Fields(printout), " ")
+	printout = strings.Join(customSplit(printout), " ")
 
 	err = os.WriteFile(outputFileName, []byte(printout), filePermission)
 	if err != nil {
@@ -131,3 +131,29 @@ func processQuote(index int, txtslice []string, quotechecker int) {
 		quotechecker = 0
 	}
 }
+
+func customSplit(s string) []string {
+	var fields []string
+	var currentField string
+
+	for _, char := range s {
+		if char == ' ' || char == '\t' {
+			// Found a whitespace character, add the current field to the slice
+			if currentField != "" {
+				fields = append(fields, currentField)
+				currentField = ""
+			}
+		} else {
+			// Non-whitespace character, add it to the current field
+			currentField += string(char)
+		}
+	}
+
+	// Add the last field (if any)
+	if currentField != "" {
+		fields = append(fields, currentField)
+	}
+
+	return fields
+}
+
