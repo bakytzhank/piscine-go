@@ -7,16 +7,39 @@ import (
 	"strings"
 )
 
-// ProcessCase function processes a trigger with a specified case and applies the conversion function to preceding words
+// ProcessCase function processes a trigger with a specified case and applies the conversion function to preceding word
 func ProcessCase(index int, splitTxt []string, converter func(string) string) {
+	// Check if the field value is not word
+	n := 1
+	if IsNotWord(splitTxt[index-1]) {
+		n = 2
+		for IsNotWord(splitTxt[index-n]) {
+			n++
+		}
+	}
+	// Apply the conversion function to the preceding words
+	splitTxt[index-n] = converter(splitTxt[index-n])
+
+	// Remove the trigger from the processed text
+	splitTxt[index] = ""
+
+}
+
+// ProcessCaseN function processes a trigger with a specified case and applies the conversion function to preceding number of words
+func ProcessCaseN(index int, splitTxt []string, converter func(string) string) {
 	// Extract the numeric value following the trigger
 	num := regexp.MustCompile("[0-9]+").FindAllString(splitTxt[index+1], -1)
 	stringNum := strings.Join(num, "")
 	intNum, _ := strconv.Atoi(stringNum)
 
 	// Apply the conversion function to the preceding words
-	for i := 1; i <= intNum; i++ {
+	i := 1
+	for i <= intNum {
+		if IsNotWord(splitTxt[index-i]) {
+			intNum++
+		}
 		splitTxt[index-i] = converter(splitTxt[index-i])
+		i++
 	}
 
 	// Remove the trigger and the numeric value from the processed text
@@ -26,12 +49,20 @@ func ProcessCase(index int, splitTxt []string, converter func(string) string) {
 
 // ConvertToDecimal function converts a number from a specified base to decimal
 func ConvertToDecimal(index int, splitTxt []string, base int) {
+	// Check if the field value is not word
+	n := 1
+	if IsNotWord(splitTxt[index-1]) {
+		n = 2
+		for IsNotWord(splitTxt[index-n]) {
+			n++
+		}
+	}
 	// Convert the specified number to decimal
-	deci, _ := strconv.ParseInt(splitTxt[index-1], base, 32)
+	deci, _ := strconv.ParseInt(splitTxt[index-n], base, 32)
 	deciToStr := strconv.FormatInt(deci, 10)
 
 	// Update the processed text with the decimal value
-	splitTxt[index-1] = deciToStr
+	splitTxt[index-n] = deciToStr
 	splitTxt[index] = ""
 }
 
@@ -54,4 +85,8 @@ func ConvertAtoAn(index int, splitTxt []string) {
 			}
 		}
 	}
+}
+
+func IsNotWord (s string) bool {
+	return s == "" || s == "\n" || s == "." || s == "," || s == "!" || s == "?" || s == ";" || s == ":" || s == "'"
 }

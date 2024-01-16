@@ -10,20 +10,19 @@ import (
 func ProcessTriggers(index int, val string, splitTxt []string) {
 	switch val {
 	case "(up)":
-		splitTxt[index-1] = strings.ToUpper(splitTxt[index-1])
-		splitTxt[index] = ""
-	case "(up,":
 		convert.ProcessCase(index, splitTxt, strings.ToUpper)
+	case "(up,":
+		convert.ProcessCaseN(index, splitTxt, strings.ToUpper)
 	case "(low)":
-		splitTxt[index-1] = strings.ToLower(splitTxt[index-1])
-		splitTxt[index] = ""
-	case "(low,":
 		convert.ProcessCase(index, splitTxt, strings.ToLower)
+	case "(low,":
+		convert.ProcessCaseN(index, splitTxt, strings.ToLower)
 	case "(cap)":
-		splitTxt[index-1] = strings.Title(strings.ToLower(splitTxt[index-1]))
-		splitTxt[index] = ""
-	case "(cap,":
 		convert.ProcessCase(index, splitTxt, func(s string) string {
+			return strings.Title(strings.ToLower(s))
+		})
+	case "(cap,":
+		convert.ProcessCaseN(index, splitTxt, func(s string) string {
 			return strings.Title(strings.ToLower(s))
 		})
 	case "(hex)":
