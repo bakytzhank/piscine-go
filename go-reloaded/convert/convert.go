@@ -10,11 +10,18 @@ import (
 // ProcessCase function processes a trigger with a specified case and applies the conversion function to preceding word
 func ProcessCase(index int, splitTxt []string, converter func(string) string) {
 	// Check if the field value is not word
-	n := 1
-	if IsNotWord(splitTxt[index-1]) {
-		n = 2
-		for IsNotWord(splitTxt[index-n]) {
+	n := 0
+	if index != 0 {
+		n = 1
+	} 
+	if IsNotWord(splitTxt[index-n]) && n < index {
+		if n < index {
 			n++
+		}
+		for IsNotWord(splitTxt[index-n]) {
+			if n < index {
+				n++
+			}
 		}
 	}
 	// Apply the conversion function to the preceding words
@@ -52,11 +59,18 @@ func ProcessCaseN(index int, splitTxt []string, converter func(string) string) {
 // ConvertToDecimal function converts a number from a specified base to decimal
 func ConvertToDecimal(index int, splitTxt []string, base int) {
 	// Check if the field value is not word
-	n := 1
-	if IsNotWord(splitTxt[index-1]) {
-		n = 2
-		for IsNotWord(splitTxt[index-n]) {
+	n := 0
+	if index != 0 {
+		n = 1
+	} 
+	if IsNotWord(splitTxt[index-n]) && n < index {
+		if n < index {
 			n++
+		}
+		for IsNotWord(splitTxt[index-n]) {
+			if n < index {
+				n++
+			}
 		}
 	}
 	// Convert the specified number to decimal
