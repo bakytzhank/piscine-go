@@ -41,7 +41,6 @@ func CustomSplit(s string) []string {
 // CustomJoin function customizes the joining of words into a single string, handling newline characters
 func CustomJoin(s []string) string {
 	var result strings.Builder
-
 	// Iterate through each field in the input slice
 	for i, field := range s {
 		// Skip adding a space if the current field is first or current or previous field is '\n'

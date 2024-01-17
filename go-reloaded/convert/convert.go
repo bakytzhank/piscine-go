@@ -31,11 +31,13 @@ func ProcessCaseN(index int, splitTxt []string, converter func(string) string) {
 	num := regexp.MustCompile("[0-9]+").FindAllString(splitTxt[index+1], -1)
 	stringNum := strings.Join(num, "")
 	intNum, _ := strconv.Atoi(stringNum)
-
+	if intNum > index {
+		intNum = index
+	}
 	// Apply the conversion function to the preceding words
 	i := 1
 	for i <= intNum {
-		if IsNotWord(splitTxt[index-i]) {
+		if IsNotWord(splitTxt[index-i]) && intNum < index {
 			intNum++
 		}
 		splitTxt[index-i] = converter(splitTxt[index-i])
@@ -58,19 +60,29 @@ func ConvertToDecimal(index int, splitTxt []string, base int) {
 		}
 	}
 	// Convert the specified number to decimal
-	deci, _ := strconv.ParseInt(splitTxt[index-n], base, 32)
+	deci, err := strconv.ParseInt(splitTxt[index-n], base, 32)
 	deciToStr := strconv.FormatInt(deci, 10)
 
 	// Update the processed text with the decimal value
-	splitTxt[index-n] = deciToStr
+	if err == nil {
+		splitTxt[index-n] = deciToStr
+	}
 	splitTxt[index] = ""
 }
 
 // ConvertAtoAn function converts "a" or "A" to "an" or "An" when followed by a word starting with a vowel or h
 func ConvertAtoAn(index int, splitTxt []string) {
 	if index < len(splitTxt)-1 {
+		// Check if the field value is not word
+		n := 1
+		if IsNotWord(splitTxt[index+n]) {
+			n = 2
+			for IsNotWord(splitTxt[index+n]) {
+				n++
+			}
+		}
 		// Check if the next word starts with a vowel or h
-		isNextVowel, err := regexp.MatchString(`\A[aeiouh]|\A[AEIOUH]`, splitTxt[index+1])
+		isNextVowel, err := regexp.MatchString(`\A[aeiouh]|\A[AEIOUH]`, splitTxt[index+n])
 		if err != nil {
 			fmt.Println(err)
 			return
@@ -87,6 +99,7 @@ func ConvertAtoAn(index int, splitTxt []string) {
 	}
 }
 
+// Function checks if field is not word
 func IsNotWord (s string) bool {
-	return s == "" || s == "\n" || s == "." || s == "," || s == "!" || s == "?" || s == ";" || s == ":" || s == "'"
+	return s == "" || s == "\n" || s == "." || s == "," || s == "!" || s == "?" || s == ";" || s == ":" || s == "'" || s == "(cap)" || s == "(up)" || s == "(low)" 
 }

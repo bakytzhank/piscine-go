@@ -1,6 +1,6 @@
 1E (hex) files were added.
-It has been 10 (bin) years
-Ready, set ,go (up) !
+It has been 10 (bin) years (bin)
+Ready, set ,go (up, 100) !
 I should stop SHOUTING (low)
 Welcome to the Brooklyn bridge (cap)
 This is so exciting (up, 2)
@@ -17,3 +17,8 @@ one two 11 (cap, 3) (bin)
 one two three (cap, 3) (low)
 one two three (cap, 3) 
 (up, 2) four
+One two a (cap) apple three (up, 2)
+If I make you BREAKFAST IN BED (low, 3) just say thank you instead of: how (cap) did you get in my house (up, 2) ?
+I have to pack 101 (bin) outfits. Packed 1a (hex) just to be sure
+Don not be sad ,because sad backwards is das . And das not good ?
+harold wilson (cap, 2) : ' I am a optimist ,but a optimist who carries a raincoat . '

@@ -40,7 +40,6 @@ func ProcessTriggers(index int, val string, splitTxt []string) {
 func ProcessPunctuation(splitTxt []string) []byte {
 	text := strprocess.CustomJoin(splitTxt)
 	bytes := []byte(text)
-
 	// Iterate through each character in the text
 	for i := 1; i <= len(bytes); i++ {
 		for i, c := range bytes {
@@ -49,6 +48,12 @@ func ProcessPunctuation(splitTxt []string) []byte {
 				if bytes[i-1] == ' ' {
 					bytes[i-1] = bytes[i]
 					bytes[i] = ' '
+					if i != len(bytes)-1 {
+						if bytes[i+1] == '\'' {
+							bytes[i] = bytes[i+1]
+							bytes[i+1] = ' '
+						}
+					}
 				}
 			}
 		}
