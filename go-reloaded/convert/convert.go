@@ -14,11 +14,11 @@ func ProcessCase(index int, splitTxt []string, converter func(string) string) {
 	if index != 0 {
 		n = 1
 	} 
-	if IsNotWord(splitTxt[index-n]) && n < index {
+	if (IsWhiteSpaceOrTrigger(splitTxt[index-n]) || IsPunctuation(splitTxt[index-n])) && n < index {
 		if n < index {
 			n++
 		}
-		for IsNotWord(splitTxt[index-n]) {
+		for IsWhiteSpaceOrTrigger(splitTxt[index-n]) || IsPunctuation(splitTxt[index-n]) {
 			if n < index {
 				n++
 			}
@@ -44,7 +44,7 @@ func ProcessCaseN(index int, splitTxt []string, converter func(string) string) {
 	// Apply the conversion function to the preceding words
 	i := 1
 	for i <= intNum {
-		if IsNotWord(splitTxt[index-i]) && intNum < index {
+		if (IsWhiteSpaceOrTrigger(splitTxt[index-i]) || IsPunctuation(splitTxt[index-i])) && intNum < index {
 			intNum++
 		}
 		splitTxt[index-i] = converter(splitTxt[index-i])
@@ -63,11 +63,11 @@ func ConvertToDecimal(index int, splitTxt []string, base int) {
 	if index != 0 {
 		n = 1
 	} 
-	if IsNotWord(splitTxt[index-n]) && n < index {
+	if (IsWhiteSpaceOrTrigger(splitTxt[index-n]) || IsPunctuation(splitTxt[index-n])) && n < index {
 		if n < index {
 			n++
 		}
-		for IsNotWord(splitTxt[index-n]) {
+		for IsWhiteSpaceOrTrigger(splitTxt[index-n]) || IsPunctuation(splitTxt[index-n]) {
 			if n < index {
 				n++
 			}
@@ -89,10 +89,16 @@ func ConvertAtoAn(index int, splitTxt []string) {
 	if index < len(splitTxt)-1 {
 		// Check if the field value is not word
 		n := 1
-		if IsNotWord(splitTxt[index+n]) {
-			n = 2
-			for IsNotWord(splitTxt[index+n]) {
+		if IsWhiteSpaceOrTrigger(splitTxt[index+n]) {
+			if n < len(splitTxt)-index-1 {
 				n++
+			}
+			for IsWhiteSpaceOrTrigger(splitTxt[index+n]) {
+				if n < len(splitTxt)-index-1 {
+					n++
+				} else {
+					break
+				}
 			}
 		}
 		// Check if the next word starts with a vowel or h
@@ -114,6 +120,10 @@ func ConvertAtoAn(index int, splitTxt []string) {
 }
 
 // Function checks if field is not word
-func IsNotWord (s string) bool {
-	return s == "" || s == "\n" || s == "." || s == "," || s == "!" || s == "?" || s == ";" || s == ":" || s == "'" || s == "(cap)" || s == "(up)" || s == "(low)" 
+func IsPunctuation (s string) bool {
+	return s == "." || s == "," || s == "!" || s == "?" || s == ";" || s == ":" || s == "'"  
+}
+
+func IsWhiteSpaceOrTrigger (s string) bool {
+	return s == "" || s == "\n" || s == "(cap)" || s == "(up)" || s == "(low)" || s == "(hex)" || s == "(bin)"
 }

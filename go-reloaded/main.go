@@ -46,10 +46,11 @@ func processFile(inputFileName, outputFileName string) error {
 
 	// Process various triggers in the text
 	resultTxt := ""
+	nextSkip := 0
 	quoteFlag := 0
 	for index, val := range splitTxt {
 		processors.ProcessTriggers(index, val, splitTxt)
-		quoteFlag = processors.ProcessQuote(index, splitTxt, quoteFlag)
+		quoteFlag, nextSkip = processors.ProcessQuote(index, splitTxt, quoteFlag, nextSkip)
 	}
 
 	// Handle punctuation and join the processed text

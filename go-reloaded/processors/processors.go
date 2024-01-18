@@ -62,20 +62,46 @@ func ProcessPunctuation(splitTxt []string) []byte {
 }
 
 // ProcessQuote function handles single quotes in the text and adjusts their positions
-func ProcessQuote(index int, splitTxt []string, quoteFlag int) int {
-	if splitTxt[index] == "'" && index < len(splitTxt)-1 && quoteFlag == 0 {
-		// Move single quote to the beginning of the following word
-		splitTxt[index+1] = "'" + splitTxt[index+1]
-		splitTxt[index] = ""
-		quoteFlag = 1
+func ProcessQuote(index int, splitTxt []string, quoteFlag int, nextSkip int) (int, int) {
+	if nextSkip == 1 {
+		nextSkip = 0
+		return quoteFlag, nextSkip
+	}
+	if quoteFlag == 0 {
+		if index < len(splitTxt)-1 {
+			// If single quote has not been opened and not adjusted, move it to the beginning of the following word
+			if splitTxt[index] == "'" {
+				// Move single quote to the beginning of the following word
+				splitTxt[index+1] = "'" + splitTxt[index+1]
+				splitTxt[index] = ""
+				quoteFlag = 1
+				nextSkip = 1
+			} else if strings.HasPrefix(splitTxt[index], "'") {
+				quoteFlag = 1
+			} else if strings.HasSuffix(splitTxt[index], "'") {
+				splitTxt[index+1] = "'" + splitTxt[index+1]
+				splitTxt[index] = strings.TrimSuffix(splitTxt[index], "'")
+				quoteFlag = 1
+				nextSkip = 1
+			}
+		}
+	} else {
+		if index > 0 {
+			// If single quote has been opened and not adjusted, move it to the end of the preceding word
+			if splitTxt[index] == "'" {
+				
+				splitTxt[index-1] = splitTxt[index-1] + "'"
+				splitTxt[index] = ""
+				quoteFlag = 0
+			} else if strings.HasSuffix(splitTxt[index], "'") {
+				quoteFlag = 0
+			} else if strings.HasPrefix(splitTxt[index], "'") {
+				splitTxt[index-1] = splitTxt[index-1] + "'"
+				splitTxt[index] = strings.TrimPrefix(splitTxt[index], "'")
+				quoteFlag = 0
+			}
+		}
 	}
 
-	if splitTxt[index] == "'" && quoteFlag == 1 {
-		// Move single quote to the end of the preceding word
-		splitTxt[index-1] = splitTxt[index-1] + "'"
-		splitTxt[index] = ""
-		quoteFlag = 0
-	}
-
-	return quoteFlag
+	return quoteFlag, nextSkip
 }
