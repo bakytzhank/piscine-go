@@ -10,4 +10,4 @@ This repository contains solutions for Piscine Go quests, group projects, and Ca
 
 ### Credits
 <span><i>Made at <a href='https://www.academie.one/'>Academie One</a></i></span>
-<span><img alt='Academie One's Logo' src='https://www.academie.one/images/hero_logo2.png' width='20px' /></span>
+<span><img alt='Academie One Logo' src='https://www.academie.one/images/hero_logo2.png' width='20px' /></span>
